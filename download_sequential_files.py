@@ -9,7 +9,7 @@ urllib.request.install_opener(opener)
 def convert_string(value):
     new_value = str(value)
     return new_value
-
+#sequence identifier
 def down_seq():
     download_path = input("Enter your input path(example : c:/my_folder ):")
     print("Url format : http://www.example.com/imageseq_no.jpg for downloading www.example.com/image1.jpg ... www.example.com/image100.jpg " )
@@ -25,6 +25,7 @@ def down_seq():
 #         print(nurl)
         down_file(nurl,download_path)
 
+#File downloader
 def down_file(fqurl,download_path):
     filename=fqurl.split('/')[-1] 
     print(filename)
