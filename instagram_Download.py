@@ -7,7 +7,8 @@ import re
 
 
 class instagram():
-    def vdo_download(self,url):     
+    def vdo_download(self):    
+        url=input("Enter Video URL")
         req = Request(url, headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'})
         page = urllib.request.urlopen(req).read()
         soup = BeautifulSoup(page,features="html.parser")
@@ -20,8 +21,8 @@ class instagram():
         name = random.randint(0,10000)
         urlretrieve (vdo_url, "C:/a/"+str(name)+".mp4")
     
-    def image_download(self,url):
-            
+    def image_download(self):
+        url=input("Enter Image URL")    
         req = Request(url, headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'})
         page = urllib.request.urlopen(req).read().decode('utf-8')
 #         print((page))
@@ -33,5 +34,13 @@ class instagram():
         urlretrieve (r, "C:/a/"+str(name)+".jpg")
         
 ig1 = instagram()
-ig1.vdo_download("https://www.instagram.com/p/BujkqYljZTm/")
-ig1.image_download("https://www.instagram.com/p/BuoBJpEAF17/")
+
+useri = input ("1 : Image     2 : video  0: Exit")
+while useri!="0":
+    if useri == "1":
+        ig1.image_download()
+    elif useri == "2":
+        ig1.vdo_download()
+    else :
+        print ("Wrong choice")
+    useri = input ("1 : Image     2 : video  0: Exit")
