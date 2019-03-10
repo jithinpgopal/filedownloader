@@ -35,7 +35,7 @@ class instagram():
         
 ig1 = instagram()
 
-useri = input ("1 : Image     2 : video  0: Exit")
+useri = input ("1:Image   2:video   0:Exit")
 while useri!="0":
     if useri == "1":
         ig1.image_download()
@@ -43,4 +43,4 @@ while useri!="0":
         ig1.vdo_download()
     else :
         print ("Wrong choice")
-    useri = input ("1 : Image     2 : video  0: Exit")
+    useri = input ("1:Image   2:video   0:Exit")
